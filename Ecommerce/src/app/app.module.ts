@@ -4,8 +4,8 @@ import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MenuModule } from './Features/menu/menu.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -15,8 +15,8 @@ import { MenuModule } from './Features/menu/menu.module';
     BrowserModule,
     AppRoutingModule,
     MDBBootstrapModule.forRoot(),
-    NgbModule,
-    MenuModule
+    MenuModule,
+    NgbModule
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [],
