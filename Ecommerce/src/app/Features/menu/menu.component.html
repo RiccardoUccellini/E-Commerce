@@ -1,4 +1,4 @@
-<div id="wrapper">
+<div id="wrapper" *ngIf="isLoginRoute()">
   <mdb-navbar SideClass="navbar navbar-expand-xl navbar-dark blue" [containerInside]="false">
 
     <!-- Navbar brand -->
@@ -20,4 +20,4 @@
   </mdb-navbar>
 
 </div>
-<div class="background-div"></div>
+<div class="background-div" *ngIf="isLoginRoute()"></div>
