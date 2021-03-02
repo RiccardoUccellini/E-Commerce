@@ -1,3 +1,14 @@
-#wrapper {
-  padding: 8vh 25vw 1vh 25vw;
+.nav-link{
+  padding: 0.5rem 30px;
+  color: transparent;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+
+}
+.nav-link.active{
+  background-color: transparent;
+  color: blue;
+
+  border-bottom-right-radius: 0.5rem;
 }
