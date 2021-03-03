@@ -19,5 +19,12 @@ export class MenuComponent implements OnInit {
     }
     return loginPath;
   }
+  isCartRoute() {
+    let loginPath = '';
+    if (this.router.url === '/carrello') {
+      loginPath = 'carrello';
+    }
+    return loginPath;
+  }
 
 }
