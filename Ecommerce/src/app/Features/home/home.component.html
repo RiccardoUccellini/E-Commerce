@@ -23,3 +23,7 @@
 <div class="buttons">
   <button mdbBtn type="button" color="secondary" mdbWavesEffect routerLink="/personalizza" routerLinkActive="active">PERSONALIZZA ORA</button>
 </div>
+<p *ngIf="isAuthenticated">
+  The user: {{user.email}} is logged in
+</p>
+<button class="btn btn-primary" (click)="logout()">Logout</button>
