@@ -1,5 +1,6 @@
+  
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-root',
@@ -7,17 +8,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Ecommerce';
+  title = 'progetto';
 
-  constructor(private router: Router) { }
+  constructor(private cookie:CookieService){
 
-  ngOnInit(): void {}
-
-  isLoginRoute() {
-    let loginPath = true;
-    if (this.router.url === '/login' || this.router.url === '/registrati') {
-      loginPath = false;
-    }
-    return loginPath;
   }
 }
