@@ -3,8 +3,9 @@
 
     <!-- Navbar brand -->
     <mdb-navbar-brand>
-      <a *ngIf="isCartRoute()!=='carrello'" class="navbar-brand text-center" routerLink="/home" routerLinkActive="active" >Welcome to Lillo.it</a>
+      <a *ngIf="isCartRoute()!=='carrello'"class="navbar-brand text-center" routerLink="/home" routerLinkActive="active" >Welcome to Lillo.it</a>
       <a *ngIf="isCartRoute()=='carrello'" class="navbar-brand text-center">Carrello (N)</a>
+      <a *ngIf="isCartRoute()=='personalizza'" class="navbar-brand text-center">Personalizza</a>
     </mdb-navbar-brand>
 
     <!-- Collapsible content -->

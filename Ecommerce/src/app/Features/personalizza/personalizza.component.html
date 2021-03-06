@@ -1,17 +1,20 @@
 <div id="wrapper">
-  <div class="jumbotron text-center hoverable mx-auto col-8 p-4 mt-3">
+  <div class="jumbotron text-center hoverable mx-auto col-6 p-4 mt-3">
 
     <!-- Grid row -->
     <div class="row">
 
       <!-- Grid column -->
-      <div class="col-md-4 offset-md-1 mx-3 my-3">
+      <div class="col-6 mx-3 my-3">
 
         <!-- Featured image -->
         <div class="view overlay waves-light" mdbWavesEffect>
-          <img src="https://mdbootstrap.com/img/Photos/Others/laptop-sm.jpg" class="img-fluid" alt="Sample image for first version of blog listing">
+          <div class="imgblend" [style.background-color]="itemForm.value.itemColor" [style.background-image]="'url(../../assets/'+itemForm.value.itemType+'.png'">
+            <!-- <img src="../../../assets/hoodie.png" class="img-fluid" alt="Sample image for first version of blog listing"> -->
+          </div>
+
           <a>
-            <div class="mask rgba-white-slight"></div>
+            <div class="itemtext" [style.color]="itemForm.value.textColor"> {{ itemForm.value.itemText }}</div>
           </a>
         </div>
 
@@ -19,41 +22,39 @@
       <!-- Grid column -->
 
       <!-- Grid column -->
-      <div class="col-7 textleft ml-3 mt-3">
-          
+      <div class="col-5 textleft">
+
         <h4 class="h4 mb-4">Prodotto</h4>
-        <div></div>
-        <div class="nav nav-tabs pb-3" id="nav-tab" role="tablist">
-          <a class="nav-item nav-link active" id="nav-1-tab" data-toggle="tab" data-target="#nav-1" role="tab" aria-controls="nav-1" aria-selected="true">T-SHIRT</a>
-          <a class="nav-item nav-link" id="nav-2-tab" data-toggle="tab" data-target="#nav-2" role="tab" aria-controls="nav-2" aria-selected="false">FELPA</a>
-          <a class="nav-item nav-link" id="nav-3-tab" data-toggle="tab" data-target="#nav-3" role="tab" aria-controls="nav-3" aria-selected="false">BORSA</a>
-          <a class="nav-item nav-link" id="nav-4-tab" data-toggle="tab" data-target="#nav-4" role="tab" aria-controls="nav-4" aria-selected="false">ZAINO</a>
-      </div>
-      <div class="tab-pane fade show active" id="nav-1" role="tabpanel" aria-labelledby="nav-1-tab">
-        <div class="row">
-            <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
 
-                  </div>
-                  </div>
-                  </div>
-              
+        <form #itemForm="ngForm" (ngSubmit)="addToCart(itemForm.value)">
+          <div class="form-group">
 
-        <p class="font-weight-normal d-flex">Colore prodotto</p>
-        <div class="d-flex flex-row">
-          <div class="rounded-circle red mx-2"></div>
-          <div class="rounded-circle orange mx-2 "></div>
-          <div class="rounded-circle yellow mx-2 "></div>
-          <div class="rounded-circle green mx-2 "></div>
-          <div class="rounded-circle lightblue mx-2 "></div>
-          <div class="rounded-circle blue mx-2 "></div>
-         
-        </div>
-        
-        <p class="font-weight-normal d-flex">Testo personalizzato</p>
-        <textarea class="d-block" placeholder="Inserisci testo qui..."></textarea>
-        <p class="font-weight-normal d-flex">Colore testo</p>
+            <div>
+              <select class="browser-default custom-select" name="itemType" ngModel>
+                <option *ngFor="let item of list">{{item.name}}</option>
+              </select>
+                  </div>
 
-        <a mdbBtn color="success" mdbWavesEffect>Aggiungi al carrello</a>
+                  <div class="tab-pane fade show active" id="nav-1" role="tabpanel" aria-labelledby="nav-1-tab">
+            <div class="row">
+                <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+                </div>
+            </div>
+                  </div>
+            <p class="font-weight-normal d-flex">Colore prodotto</p>
+            <div class="d-flex flex-row">
+              <input type="color" class="form-control btn-bottom"  name="itemColor" ngModel>
+            </div>
+            <p class="font-weight-normal d-flex">Testo personalizzato</p>
+            <div class="md-form">
+              <input mdbInput type="text" id="form1" class="form-control" name="itemText" value="Il mio testo" ngModel>
+              <label for="form1" class="">Inserisci testo..</label>
+            </div>
+            <p class="font-weight-normal d-flex margin0">Colore testo</p>
+            <input type="color" id="form1" class="form-control btn-bottom"  name="textColor" ngModel>
+            <input mdbBtn type="submit" value="Aggiungi al carrello" color="blue" mdbWavesEffect>
+          </div>
+        </form>
 
       </div>
       <!-- Grid column -->

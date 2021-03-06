@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { MenuModule } from './Features/menu/menu.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppRoutingModule,
     MDBBootstrapModule.forRoot(),
     MenuModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [],

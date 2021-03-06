@@ -1,43 +1,37 @@
+.jumbotron {
+  margin-top: 20vh;
+}
 .nav-link{
-  padding: 0.5rem 30px;
+  margin: auto;
+  padding: 0.5rem 1.2em;
   color: transparent;
   display: flex;
   align-items: center;
   font-weight: 600;
-
-}
-.nav-link.active{
-  background-color: transparent;
-  color: blueviolet;
-  border: none;
-}
-div.red{
-  height: 40px;
-  width: 40px;
-  
-}
-div.orange{
-  height: 40px;
-  width: 40px;
-  
-}
-div.yellow{
-  height: 40px;
-  width: 40px;
-
-}
-div.green{
-  height: 40px;
-  width: 40px;
-
-}div.lightblue{
-  height: 40px;
-  width: 40px;
-
-  background-color: lightblue;
-}div.blue{
-  height: 40px;
-  width: 40px;
-
 }
 
+select,
+.rounded-circle,
+input[type=color] {
+  cursor: pointer;
+}
+.btn-bottom {
+  margin-bottom: 2vh;
+}
+ .imgblend {
+   border-radius: 6px;
+   background-blend-mode: exclusion;
+   filter: invert(1);
+   min-height: 50vh;
+   max-height: 50vh;
+   background-position: top left;
+   background-size: contain;
+   background-repeat: no-repeat;
+   box-shadow: inset 0 0 10px rgba(255, 255, 255, .3);
+ }
+.itemtext {
+  color: black;
+  margin-top: 2vh;
+  font-size: 2em;
+  word-wrap: break-word;
+}
