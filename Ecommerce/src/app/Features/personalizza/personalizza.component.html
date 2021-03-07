@@ -27,7 +27,7 @@
 
         <h4 class="h4 mb-4">Prodotto</h4>
 
-        <form #itemForm="ngForm" (ngSubmit)="addToCart(itemForm.value)">
+        <form #itemForm="ngForm" (ngSubmit)="addToCart(itemForm.value.itemType, itemForm.value.itemColor, itemForm.value.itemText, itemForm.value.textColor)">
           <div class="form-group">
 
             <div>
@@ -65,4 +65,3 @@
 
   </div>
 </div>
-

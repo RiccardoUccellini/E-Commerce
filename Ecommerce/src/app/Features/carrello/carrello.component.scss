@@ -7,3 +7,19 @@
   padding-top: 0 !important;
   padding-bottom: 0 !important;
 }
+.imgblend {
+  border-radius: 6px;
+  background-blend-mode: exclusion;
+  filter: invert(1);
+  min-height: 20vh;
+  max-height: 50vh;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, .3);
+}
+.list-grid {
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+  column-gap: 2em;
+}

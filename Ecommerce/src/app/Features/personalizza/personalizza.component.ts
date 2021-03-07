@@ -1,4 +1,8 @@
+import { Item } from '../../Store/models/item.model';
+import { AppState } from '../../app.state';
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-personalizza',
@@ -7,37 +11,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonalizzaComponent implements OnInit {
 
-  colors:any;
-  list:any;
-  selected :any;
-  constructor() {
+  list: any;
+  items: Observable<Item[]>;
+  constructor(private store: Store<AppState>) {
     this.list = [
       { value: '1', name: 'FELPA'},
       { value: '2', name: 'T-SHIRT'},
       { value: '3', name: 'SCIARPA'},
       { value: '4', name: 'SCARPE'}
     ];
-    this.colors = [
-      { value: '1', bg: 'white' },
-      { value: '2', bg: 'black' },
-      { value: '3', bg: 'red' },
-      { value: '4', bg: 'pink' },
-      { value: '5', bg: 'green' }
-    ];
 
-  }
-  select(item) {
-      this.selected = item;
-  };
-  isActive(item) {
-      return this.selected === item;
-  };
-
-  addToCart(data: any){
-    console.log(data);
+    this.items = this.store.select(state => state.item);
   }
 
-  ngOnInit(): void {}
+  addToCart(itemType:any, itemColor:any, itemText:any, textColor:any) {
+    alert('Articolo aggiunto al carrello!');
+    console.log(itemColor + '' + itemType + '' + itemText + '' + textColor);
+    this.store.dispatch({
+      type: 'ADD_ITEM',
+      payload: <Item> {
+        itemType: itemType,
+        itemColor: itemColor,
+        itemText: itemText,
+        textColor: textColor
+      }
+    });
+  }
+  ngOnInit() {}
 
   }
 

@@ -1,10 +1,24 @@
 <div class="wrapper">
   <div class="jumbotron jumbotron-fluid margin0">
-      <h1 class="display-4">Carrello (n)</h1>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
+      <ul class="list-group list-group-flush" *ngFor="let n of items | async">
+        <li class="list-group-item">
+
+          <div class="list-grid">
+
+            <div class="imgblend left" [style.background-color]="n.itemColor"
+             [style.background-image]="'url(../../assets/'+n.itemType+'.png'">
+            </div>
+
+            <div class="right">
+              <p>Articolo: {{ n.itemType }}</p>
+              <p>Colore: <span  [style.background-color]="n.itemColor">{{ n.itemColor }}</span></p>
+              <p>Testo personalizzato: {{ n.itemText }}</p>
+              <p>Colore testo: <span [style.background-color]="n.textColor">{{ n.textColor }}</span></p>
+            </div>
+
+          </div>
+          <hr>
+        </li>
       </ul>
   </div>
 </div>
-

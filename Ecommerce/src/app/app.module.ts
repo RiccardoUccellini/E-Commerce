@@ -7,6 +7,8 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { MenuModule } from './Features/menu/menu.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
+import { addItemReducer } from './Store/reducers/item.reducer';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     MDBBootstrapModule.forRoot(),
     MenuModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    StoreModule.forRoot({item: addItemReducer})
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [],
