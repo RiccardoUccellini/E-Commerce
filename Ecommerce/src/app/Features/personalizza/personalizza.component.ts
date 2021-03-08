@@ -3,23 +3,21 @@ import { AppState } from '../../app.state';
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-personalizza',
   templateUrl: './personalizza.component.html',
   styleUrls: ['./personalizza.component.scss']
 })
+
 export class PersonalizzaComponent implements OnInit {
 
-  list: any;
+  itemId: string;
   items: Observable<Item[]>;
-  constructor(private store: Store<AppState>) {
-    this.list = [
-      { value: '1', name: 'FELPA'},
-      { value: '2', name: 'T-SHIRT'},
-      { value: '3', name: 'SCIARPA'},
-      { value: '4', name: 'SCARPE'}
-    ];
+
+  constructor(private store: Store<AppState>, private route: ActivatedRoute) {
 
     this.items = this.store.select(state => state.item);
   }
@@ -27,7 +25,7 @@ export class PersonalizzaComponent implements OnInit {
   addToCart(itemType:any, itemColor:any, itemText:any, textColor:any) {
     if (itemType && itemColor) {
       alert('Articolo aggiunto al carrello!');
-      console.log(itemColor + '' + itemType + '' + itemText + '' + textColor);
+      // console.log(itemColor + '' + itemType + '' + itemText + '' + textColor);
     this.store.dispatch({
       type: 'ADD_ITEM',
       payload: <Item> {
@@ -39,13 +37,16 @@ export class PersonalizzaComponent implements OnInit {
     });
     }
     else {
-      alert('Per continuare, seleziona articolo e colore!');
+      alert('Per continuare, seleziona il colore!');
       return;
     }
 
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.itemId = this.route.snapshot.paramMap.get('itemType');
+    console.log(this.itemId);
+   }
 
   }
 

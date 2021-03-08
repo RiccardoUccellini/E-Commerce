@@ -10,7 +10,7 @@
         <!-- Featured image -->
         <div class="view overlay waves-light" mdbWavesEffect>
           <div class="imgblend" [style.background-color]="itemForm.value.itemColor"
-           [style.background-image]="'url(../../assets/'+itemForm.value.itemType+'.png'">
+           [style.background-image]="'url(../../assets/'+itemId+'.png'">
             <!-- <img src="../../../assets/hoodie.png" class="img-fluid" alt="Sample image for first version of blog listing"> -->
           </div>
 
@@ -27,14 +27,12 @@
 
         <h4 class="h4 mb-4">Prodotto</h4>
 
-        <form #itemForm="ngForm" (ngSubmit)="addToCart(itemForm.value.itemType, itemForm.value.itemColor, itemForm.value.itemText, itemForm.value.textColor)">
+        <form #itemForm="ngForm" (ngSubmit)="addToCart(itemId, itemForm.value.itemColor, itemForm.value.itemText, itemForm.value.textColor)">
           <div class="form-group">
 
             <div>
-              <select class="browser-default custom-select" name="itemType" ngModel>
-                <option *ngFor="let item of list">{{item.name}}</option>
-              </select>
-                  </div>
+              <input type="text" class="itemId" name="itemType" [value]="itemId" readonly>
+            </div>
 
                   <div class="tab-pane fade show active" id="nav-1" role="tabpanel" aria-labelledby="nav-1-tab">
             <div class="row">
