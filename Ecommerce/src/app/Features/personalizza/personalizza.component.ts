@@ -25,8 +25,9 @@ export class PersonalizzaComponent implements OnInit {
   }
 
   addToCart(itemType:any, itemColor:any, itemText:any, textColor:any) {
-    alert('Articolo aggiunto al carrello!');
-    console.log(itemColor + '' + itemType + '' + itemText + '' + textColor);
+    if (itemType && itemColor) {
+      alert('Articolo aggiunto al carrello!');
+      console.log(itemColor + '' + itemType + '' + itemText + '' + textColor);
     this.store.dispatch({
       type: 'ADD_ITEM',
       payload: <Item> {
@@ -36,7 +37,14 @@ export class PersonalizzaComponent implements OnInit {
         textColor: textColor
       }
     });
+    }
+    else {
+      alert('Per continuare, seleziona articolo e colore!');
+      return;
+    }
+
   }
+
   ngOnInit() {}
 
   }

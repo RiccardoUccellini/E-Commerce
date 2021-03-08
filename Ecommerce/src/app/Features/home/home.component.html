@@ -1,25 +1,12 @@
 <div id="wrapper">
   <mdb-carousel [animation]="'slide'">
-    <mdb-carousel-item>
+    <mdb-carousel-item *ngFor="let item of list">
       <div class="view w-100">
-        <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg" alt="First slide">
-        <div class="mask rgba-black-light waves-light" mdbWavesEffect></div>
-      </div>
-    </mdb-carousel-item>
-    <mdb-carousel-item>
-      <div class="view w-100">
-        <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg" alt="Second slide">
-        <div class="mask rgba-black-strong waves-light" mdbWavesEffect></div>
-      </div>
-    </mdb-carousel-item>
-    <mdb-carousel-item>
-      <div class="view w-100">
-        <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg" alt="Third slide">
+        <img class="d-block w-100" [src]="item.img" alt="First slide">
         <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
+        <button class="bottombtn" type="button" color="secondary" routerLink="/personalizza" routerLinkActive="active">PERSONALIZZA ORA</button>
       </div>
     </mdb-carousel-item>
   </mdb-carousel>
 </div>
-<div class="buttons">
-  <button mdbBtn type="button" color="secondary" mdbWavesEffect routerLink="/personalizza" routerLinkActive="active">PERSONALIZZA ORA</button>
-</div>
+

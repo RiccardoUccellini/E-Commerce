@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  list: any;
+  private itemType: any;
+
+  constructor() {
+    this.list = [
+      { value: '1', name: 'FELPA', img: "../../../assets/FELPA.png"},
+      { value: '2', name: 'T-SHIRT', img: "../../../assets/T-SHIRT.png"},
+      { value: '3', name: 'SCIARPA', img: "../../../assets/SCIARPA.png"},
+      { value: '4', name: 'SCARPE', img: "../../../assets/SCARPE.png"}
+    ];
+  }
 
   ngOnInit(): void {
   }
-
 }

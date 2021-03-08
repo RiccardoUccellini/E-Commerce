@@ -1,9 +1,52 @@
 #wrapper {
   position: relative;
-  padding: 3vh 6vh 1vh 6vh;
+  padding: 3vh 6vh 0 6vh;
 }
 .buttons {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+img {
+  max-width: 38vw;
+}
+.view {
+  display: flex;
+  justify-content: center;
+}
+mdb-carousel {
+  position: relative;
+}
+.bottombtn {
+  position: absolute;
+  // background-color: rgba($color: #000000, $alpha: .04);
+  background-color: rgba(255, 255, 255, .2);
+  backdrop-filter: blur(3px);
+  border: 1px solid transparent;
+  border-radius: 9999px;
+  padding: 1.2em;
+  bottom: 10%;
+  animation: btn-movement 0.8s infinite alternate;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    background: linear-gradient(90deg, rgba(131,217,255,.1) 0%, rgba(168,153,255,.1) 51%, rgba(204,154,250,.1) 100%);
+
+    transition: clip-path 200ms ease-in;
+}
+  &:hover::before {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+
+@keyframes btn-movement {
+  100% {bottom: 12%;}
 }

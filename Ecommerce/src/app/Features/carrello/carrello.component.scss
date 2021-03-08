@@ -23,3 +23,11 @@
   grid-template-columns: 3fr 7fr;
   column-gap: 2em;
 }
+hr {
+  margin-bottom: 4px;
+}
+.colors {
+  color: transparent;
+  box-shadow: inset 0 0 6px rgb(197, 197, 197);
+  border-radius: 9999px;
+}

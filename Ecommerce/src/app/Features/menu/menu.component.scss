@@ -8,10 +8,19 @@
   z-index: -1;
 }
 .navbar .navbar-expand-xl{
-  background: rgb(131,217,255);
-  background: linear-gradient(90deg, rgba(131,217,255,1) 0%, rgba(168,153,255,1) 51%, rgba(204,154,250,1) 100%);
+  background: initial;
+  background: linear-gradient(90deg, rgba(131,217,255,.9) 0%, rgba(168,153,255,.9) 51%, rgba(204,154,250,.9) 100%);
 }
  .navbar-brand {
    position: relative;
    text-align: center;
  }
+.homebtn {
+  position: relative;
+  background-color: rgba(255, 255, 255, .2);
+  backdrop-filter: blur(3px);
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: .6em;
+
+}
