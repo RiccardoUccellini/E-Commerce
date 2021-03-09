@@ -30,6 +30,7 @@ input[type=color] {
    background-size: contain;
    background-repeat: no-repeat;
    box-shadow: inset 0 0 10px rgba(255, 255, 255, .3);
+   position: relative;
  }
 .itemtext {
   padding: .2em;

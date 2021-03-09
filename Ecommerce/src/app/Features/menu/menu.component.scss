@@ -22,5 +22,56 @@
   border: 1px solid transparent;
   border-radius: 4px;
   padding: .6em;
-
 }
+ .carrello-hover {
+   position: absolute;
+   top: 2.9em;
+   right: 0;
+   background-color: rgba(255, 255, 255, 0.726);
+   backdrop-filter: blur(3px);
+   border: 1px solid transparent;
+   border-radius: 4px;
+   min-width: 16vw;
+   max-width: 22vw;
+   word-wrap: break-word;
+   transform: scaleY(0);
+   transition: transform 250ms ease-in-out 300ms;
+   transform-origin: top;
+
+   p {
+     margin-bottom: 0;
+     padding-left: 1em;
+     padding-right: 1em;
+   }
+ }
+ .cart-link {
+   display: flex;
+   align-content: center;
+   justify-content: center;
+   max-width: 22vw;
+   cursor: pointer;
+  position: absolute;
+  top: .5em;
+  right: 1em;
+  z-index: 200;
+  background-color: rgba(255, 255, 255, .2);
+  backdrop-filter: blur(3px);
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: .6em;
+  transition: background-color 300ms ease-in-out,
+              padding 300ms ease-in-out,
+              text-align 300ms ease-in-out;
+
+   &:hover {
+    background-color: rgba(255, 255, 255, 0.726);
+    padding:  .6em 6.16vw .6em 6.16vw;
+    .carrello-hover {
+      transform: scaleY(1);}
+      transition-delay: transform 0ms;
+   }
+ }
+ hr {
+   margin: 4px;
+   padding: 0;
+ }

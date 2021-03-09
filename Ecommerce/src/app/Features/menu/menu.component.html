@@ -5,7 +5,6 @@
     <mdb-navbar-brand>
       <a *ngIf="isCartRoute()!=='carrello'"class="navbar-brand text-center" routerLink="/home" routerLinkActive="active" >Welcome to Lillo.it</a>
       <a *ngIf="isCartRoute()=='carrello'" class="navbar-brand text-center">Carrello (N)</a>
-      <a *ngIf="isCartRoute()=='personalizza'" class="navbar-brand text-center">Personalizza</a>
       <input class="homebtn" type="submit" value="Homepage" routerLink="/home" routerLinkActive="active">
     </mdb-navbar-brand>
 
@@ -16,8 +15,19 @@
 
       <!-- Links -->
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="nav-link" mdbWavesEffect routerLink="/carrello" routerLinkActive="active">Carrello</a>
+        <li class="nav-item">
+          <div class="cart-link" mdbWavesEffect routerLink="/carrello" routerLinkActive="active">
+            <mdb-icon fas icon="shopping-cart"></mdb-icon>Carrello
+            <div class="carrello-hover">
+              <div *ngFor="let i of cartItems | async">
+                <p>Articolo: {{ i.itemType }}</p>
+                <p>Colore: <span class="colors"  [style.background-color]="i.itemColor">{{ i.itemColor }}</span></p>
+                <p>Testo personalizzato: {{ i.itemText }}</p>
+                <p>Colore testo: <span class="colors" [style.background-color]="i.textColor">{{ i.textColor }}</span></p>
+                <hr>
+              </div>
+            </div>
+          </div>
         </li>
       </ul>
       <!-- Links -->
@@ -28,3 +38,5 @@
 
 </div>
 <div class="background-div"></div>
+
+
