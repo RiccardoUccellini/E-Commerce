@@ -22,6 +22,12 @@
   border: 1px solid transparent;
   border-radius: 4px;
   padding: .6em;
+  transition: background-color 300ms ease-in-out,
+              padding 300ms ease-in-out;
+  &:hover  {
+    background-color: rgba(255, 255, 255, 0.726);
+    padding:  .6em 6.16vw .6em 6.16vw;
+  }
 }
  .carrello-hover {
    position: absolute;
@@ -29,7 +35,7 @@
    right: 0;
    background-color: rgba(255, 255, 255, 0.726);
    backdrop-filter: blur(3px);
-   border: 1px solid transparent;
+   border: 1px solid whitesmoke;
    border-radius: 4px;
    min-width: 16vw;
    max-width: 22vw;
@@ -37,7 +43,8 @@
    transform: scaleY(0);
    transition: transform 250ms ease-in-out 300ms;
    transform-origin: top;
-
+   max-height: 80vh;
+   overflow: auto;
    p {
      margin-bottom: 0;
      padding-left: 1em;
@@ -48,7 +55,7 @@
    display: flex;
    align-content: center;
    justify-content: center;
-   max-width: 22vw;
+   max-width: 16vw;
    cursor: pointer;
   position: absolute;
   top: .5em;
@@ -60,10 +67,9 @@
   border-radius: 4px;
   padding: .6em;
   transition: background-color 300ms ease-in-out,
-              padding 300ms ease-in-out,
-              text-align 300ms ease-in-out;
+              padding 300ms ease-in-out;
 
-   &:hover {
+   &:hover  {
     background-color: rgba(255, 255, 255, 0.726);
     padding:  .6em 6.16vw .6em 6.16vw;
     .carrello-hover {
@@ -74,4 +80,20 @@
  hr {
    margin: 4px;
    padding: 0;
+ }
+
+ ::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+ }
+ ::-webkit-scrollbar-thumb {
+  background: rgb(201, 201, 201);
+  border-radius: 8px;
+ }
+ ::-webkit-scrollbar-thumb:hover{
+  background: rgb(204, 204, 204);
+ }
+ ::-webkit-scrollbar-track{
+  background: transparent;
+  border-radius: 8px;
  }
