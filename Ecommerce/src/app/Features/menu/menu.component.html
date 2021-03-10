@@ -1,11 +1,12 @@
 <div id="wrapper">
-  <mdb-navbar SideClass="navbar navbar-expand-xl navbar-dark" [containerInside]="false">
+  <mdb-navbar SideClass="navbar navbar-expand-xl navbar-expand navbar-dark" [containerInside]="false">
 
     <!-- Navbar brand -->
     <mdb-navbar-brand>
-      <a *ngIf="isCartRoute()!=='carrello'"class="navbar-brand text-center" routerLink="/home" routerLinkActive="active" >Welcome to Lillo.it</a>
-      <a *ngIf="isCartRoute()=='carrello'" class="navbar-brand text-center">Carrello (N)</a>
       <input class="homebtn" type="submit" value="Homepage" routerLink="/home" routerLinkActive="active">
+      <a *ngIf="checkRoute()=='/home'" class="navbar-brand centered" routerLink="/home" routerLinkActive="active" >Welcome to Lillo.it</a>
+      <a *ngIf="checkRoute()!=='/home' && checkRoute()!=='/carrello'" class="navbar-brand centered" routerLink="/personalizza"><b>Personalizza</b></a>
+      <a *ngIf="checkRoute()=='/carrello'" class="navbar-brand centered" routerLink="/carrello">Carrello (N)</a>
     </mdb-navbar-brand>
 
 

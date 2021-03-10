@@ -28,6 +28,12 @@
     background-color: rgba(255, 255, 255, 0.726);
     padding:  .6em 6.16vw .6em 6.16vw;
   }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(39, 153, 219, 0.3);
+    border: .1px solid rgb(80, 135, 255);
+  }
 }
  .carrello-hover {
    position: absolute;
@@ -35,7 +41,6 @@
    right: 0;
    background-color: rgba(255, 255, 255, 0.726);
    backdrop-filter: blur(3px);
-   border: 1px solid whitesmoke;
    border-radius: 4px;
    min-width: 16vw;
    max-width: 22vw;
@@ -75,7 +80,14 @@
     .carrello-hover {
       transform: scaleY(1);}
       transition-delay: transform 0ms;
+      border: 1px solid whitesmoke;
    }
+
+   &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(39, 153, 219, 0.3);
+    border: .1px solid rgb(80, 135, 255);
+  }
  }
  hr {
    margin: 4px;
@@ -97,3 +109,13 @@
   background: transparent;
   border-radius: 8px;
  }
+.centered {
+  font-size: 1.8em;
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  color: initial;
+  color: whitesmoke;
+  // transform: translateX(43vw);
+}

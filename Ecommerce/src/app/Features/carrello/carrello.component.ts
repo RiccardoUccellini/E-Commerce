@@ -12,13 +12,21 @@ import { Observable } from 'rxjs';
 export class CarrelloComponent implements OnInit {
 
   items: Observable<Item[]>;
+  pageNum:number;
 
   constructor(private store: Store<AppState>) {
 
     this.items = this.store.select(state => state.item);
+
+    this.pageNum = 1;
   }
 
   ngOnInit(): void {
+
+  }
+
+  choosePage(num: number) {
+    this.pageNum = num;
   }
 
 }
