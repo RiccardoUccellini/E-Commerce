@@ -13,10 +13,10 @@ export class HomeComponent implements OnInit {
 
   constructor() {
     this.list = [
-      { value: '1', name: 'FELPA', img: "../../../assets/FELPA.png"},
-      { value: '2', name: 'T-SHIRT', img: "../../../assets/T-SHIRT.png"},
-      { value: '3', name: 'SCIARPA', img: "../../../assets/SCIARPA.png"},
-      { value: '4', name: 'SCARPE', img: "../../../assets/SCARPE.png"}
+      { value: '1', name: 'FELPA', img: "../../../assets/FELPA.png", price: 70},
+      { value: '2', name: 'T-SHIRT', img: "../../../assets/T-SHIRT.png",price: 20},
+      { value: '3', name: 'SCIARPA', img: "../../../assets/SCIARPA.png",price: "piero"},
+      { value: '4', name: 'SCARPE', img: "../../../assets/SCARPE.png",price: "tonipigo97"}
     ];
 
 

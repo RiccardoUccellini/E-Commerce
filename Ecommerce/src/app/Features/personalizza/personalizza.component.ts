@@ -15,6 +15,7 @@ import { ActivatedRoute } from '@angular/router';
 export class PersonalizzaComponent implements OnInit {
 
   itemId: string;
+  itemPrice: string;
   items: Observable<Item[]>;
 
   constructor(private store: Store<AppState>, private route: ActivatedRoute) {
@@ -22,7 +23,7 @@ export class PersonalizzaComponent implements OnInit {
     this.items = this.store.select(state => state.item);
   }
 
-  addToCart(itemType:any, itemColor:any, itemText:any, textColor:any) {
+  addToCart(itemType:any, itemColor:any, itemText:any, textColor:any, itemPrice:any) {
     if (itemType && itemColor) {
       alert('Articolo aggiunto al carrello!');
       // console.log(itemColor + '' + itemType + '' + itemText + '' + textColor);
@@ -32,7 +33,8 @@ export class PersonalizzaComponent implements OnInit {
         itemType: itemType,
         itemColor: itemColor,
         itemText: itemText,
-        textColor: textColor
+        textColor: textColor,
+        itemPrice: itemPrice
       }
     });
     }
@@ -45,7 +47,8 @@ export class PersonalizzaComponent implements OnInit {
 
   ngOnInit() {
     this.itemId = this.route.snapshot.paramMap.get('itemType');
-    console.log(this.itemId);
+    this.itemPrice = this.route.snapshot.paramMap.get('itemPrice');
+    console.log(this.itemPrice);
    }
 
   }

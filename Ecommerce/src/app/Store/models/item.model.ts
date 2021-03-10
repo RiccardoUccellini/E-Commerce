@@ -3,4 +3,5 @@ export interface Item {
   itemColor: string;
   itemText: string;
   textColor: string;
+  itemPrice: string;
 }

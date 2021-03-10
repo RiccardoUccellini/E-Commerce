@@ -27,11 +27,12 @@
 
         <h4 class="h4 mb-4">Prodotto</h4>
 
-        <form #itemForm="ngForm" (ngSubmit)="addToCart(itemId, itemForm.value.itemColor, itemForm.value.itemText, itemForm.value.textColor)">
+        <form #itemForm="ngForm" (ngSubmit)="addToCart(itemId, itemForm.value.itemColor, itemForm.value.itemText, itemForm.value.textColor, itemPrice)">
           <div class="form-group">
 
             <div>
               <input type="text" class="itemId" name="itemType" [value]="itemId" readonly>
+              <input type="text" class="itemId" name="itemPrice" [value]="itemPrice" readonly>
             </div>
 
                   <div class="tab-pane fade show active" id="nav-1" role="tabpanel" aria-labelledby="nav-1-tab">
@@ -41,9 +42,9 @@
             </div>
                   </div>
             <p class="font-weight-normal d-flex">Colore prodotto</p>
-            <div class="d-flex flex-row">
-              <input type="color" value="#fff000" class="form-control btn-bottom"  name="itemColor" ngModel>
-            </div>
+           
+              <input type="color"  class="form-control btn-bottom"  name="itemColor" ngModel>
+            
             <p class="font-weight-normal d-flex">Testo personalizzato</p>
             <div class="md-form">
               <input mdbInput type="text"  maxlength="30" id="form1" class="form-control" name="itemText" value="Il mio testo" ngModel>
