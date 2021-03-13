@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Item } from 'src/app/Store/models/item.model';
+import { ItemsService } from '../../services/items/items.service';
 
 @Component({
   selector: 'app-home',
@@ -11,14 +13,12 @@ export class HomeComponent implements OnInit {
   private itemType: any;
 
 
-  constructor() {
-    this.list = [
-      { value: '1', name: 'FELPA', img: "../../../assets/FELPA.png", price: 70},
-      { value: '2', name: 'T-SHIRT', img: "../../../assets/T-SHIRT.png",price: 20},
-      { value: '3', name: 'SCIARPA', img: "../../../assets/SCIARPA.png",price: "piero"},
-      { value: '4', name: 'SCARPE', img: "../../../assets/SCARPE.png",price: "tonipigo97"}
-    ];
+  constructor(private ItemsService: ItemsService) {
 
+    this.ItemsService.sendGetRequest().subscribe((data: any[])=>{
+      console.log(data);
+      this.list = data;
+    })
 
   }
 
@@ -27,3 +27,4 @@ export class HomeComponent implements OnInit {
 
 
 }
+

@@ -9,6 +9,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { addItemReducer } from './Store/reducers/item.reducer';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { addItemReducer } from './Store/reducers/item.reducer';
     MenuModule,
     NgbModule,
     FormsModule,
-    StoreModule.forRoot({item: addItemReducer})
+    StoreModule.forRoot({item: addItemReducer}),
+    HttpClientModule
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [],

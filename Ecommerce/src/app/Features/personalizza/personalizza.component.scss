@@ -54,3 +54,11 @@ input[type=color] {
     border: .1px solid rgb(80, 135, 255);
   }
  }
+
+ .itemPrice {
+  background: linear-gradient(90deg, rgba(131,217,255,1) 0%, rgba(168,153,255,1) 51%, rgba(204,154,250,1) 100%);
+  background-clip: text;
+  color: transparent;
+  border: 0;
+  font-size: 2em;
+}

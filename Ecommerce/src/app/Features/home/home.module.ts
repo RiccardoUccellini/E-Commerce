@@ -4,7 +4,8 @@ import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import { MenuModule } from '../menu/menu.module'
+import { MenuModule } from '../menu/menu.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { MenuModule } from '../menu/menu.module'
     CommonModule,
     HomeRoutingModule,
     MDBBootstrapModule.forRoot(),
-    MenuModule
+    MenuModule,
+    HttpClientModule
   ],
 })
 export class HomeModule { }

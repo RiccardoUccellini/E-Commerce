@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "user",
+      "password": "password"
+    },
+    {
+      "id": 2,
+      "username": "user2",
+      "password": "password"
+    }
+  ],
+  "items": [
+    {
+      "id": 1,
+      "name": "FELPA",
+      "img": "../../assets/FELPA.png",
+      "price": 75
+    },
+    {
+      "id": 2,
+      "name": "T-SHIRT",
+      "img": "../../assets/T-SHIRT.png",
+      "price": 35
+    },
+    {
+      "id": 3,
+      "name": "SCIARPA",
+      "img": "../../assets/SCIARPA.png",
+      "price": 20
+    },
+    {
+      "id": 4,
+      "name": "SCARPE",
+      "img": "../../assets/SCARPE.png",
+      "price": 90
+    }
+  ]
+}
