@@ -2,29 +2,20 @@
 <div class=" row justify-content-md-center">
 <!-- Form login -->
 
-<form class="text-center p-5 col-6 justify-content-center">
+<form class="text-center p-5 col-6 justify-content-center" #loginForm="ngForm" (ngSubmit)="getAuth(loginForm.value.username, loginForm.value.password)">
 
   <p class="h4 mb-4">Login</p>
 
   <!-- Input -->
-  <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
+  <input type="email" name="username" class="form-control mb-4" placeholder="E-mail" ngModel>
 
- 
-  <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
 
-  <!-- 
-  <div class="d-flex flex-row-reverse">
-    <div>
-      Ricordami 
-     <mdb-checkbox [default]="true">Ricordami</mdb-checkbox>
-    </div>
-  </div>
-      -->
+  <input type="password" name="password" class="form-control mb-4" placeholder="Password" ngModel>
 
   <!-- Bottone login -->
   <button mdbBtn color="info" block="true" class="my-4" type="submit">ACCEDI</button>
 
-  
+
   <p>Non sei ancora registrato?
     <a routerLink="/registrati">REGISTRATI</a>
   </p>
