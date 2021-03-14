@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
       this.userData = data.filter(object => {
         return object['username'] == username;
       });
-      // this.userData = JSON.parse(this.userData);
+
       if (this.userData.length < 1) {
         alert("L'utente inserito non esiste!");
       }

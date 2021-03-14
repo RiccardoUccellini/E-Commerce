@@ -3,12 +3,24 @@
     {
       "id": 1,
       "username": "user",
-      "password": "password"
+      "password": "password",
+      "nome": "lorenzo",
+      "cognome": "conti",
+      "cellulare": "3294610897",
+      "citta": "Berzo San Fermo",
+      "cap": "24060",
+      "indirizzo": "Via Santo Stefano"
     },
     {
-      "id": 2,
       "username": "user2",
-      "password": "password"
+      "password": "password",
+      "nome": "angelo",
+      "cognome": "neri",
+      "telefono": "0358220987",
+      "citta": "bergamo",
+      "cap": "24100",
+      "indirizzo": "via europa 34",
+      "id": 2
     }
   ],
   "items": [
