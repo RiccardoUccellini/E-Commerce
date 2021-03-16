@@ -17,6 +17,7 @@ export class PersonalizzaComponent implements OnInit {
   itemId: string;
   itemPrice: string;
   items: Observable<Item[]>;
+  id = 0;
 
   constructor(private store: Store<AppState>, private route: ActivatedRoute) {
 
@@ -26,17 +27,19 @@ export class PersonalizzaComponent implements OnInit {
   addToCart(itemType:any, itemColor:any, itemText:any, textColor:any, itemPrice:any) {
     if (itemType && itemColor) {
       alert('Articolo aggiunto al carrello!');
+      this.id += 1;
       // console.log(itemColor + '' + itemType + '' + itemText + '' + textColor);
-    this.store.dispatch({
-      type: 'ADD_ITEM',
-      payload: <Item> {
-        itemType: itemType,
-        itemColor: itemColor,
-        itemText: itemText,
-        textColor: textColor,
-        itemPrice: itemPrice
-      }
-    });
+      this.store.dispatch({
+        type: 'ADD_ITEM',
+        payload: <Item> {
+          id: this.id,
+          itemType: itemType,
+          itemColor: itemColor,
+          itemText: itemText,
+          textColor: textColor,
+          itemPrice: itemPrice
+        }
+      });
     }
     else {
       alert('Per continuare, seleziona il colore!');
@@ -48,7 +51,6 @@ export class PersonalizzaComponent implements OnInit {
   ngOnInit() {
     this.itemId = this.route.snapshot.paramMap.get('itemType');
     this.itemPrice = this.route.snapshot.paramMap.get('itemPrice');
-    console.log(this.itemPrice);
    }
 
   }

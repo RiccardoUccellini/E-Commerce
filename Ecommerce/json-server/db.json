@@ -21,6 +21,17 @@
       "cap": "24100",
       "indirizzo": "via europa 34",
       "id": 2
+    },
+    {
+      "username": "lorenzoconti",
+      "password": "password",
+      "nome": "Lorenzo",
+      "cognome": "Conti",
+      "telefono": "3294610829",
+      "citta": "Berzo",
+      "cap": "24060",
+      "indirizzo": "Via s stefano 65",
+      "id": 3
     }
   ],
   "items": [

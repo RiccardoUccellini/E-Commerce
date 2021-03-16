@@ -7,7 +7,14 @@ export function addItemReducer(state: Item[] = [], action: any) {
     case ADD_ITEM:
         return [...state, action.payload];
     case REMOVE_ITEM:
-        return [...state, action.payload];
+      const id = action.payload
+      let result=state.forEach((element,index) => {
+        if(element.id==id
+          ) state.splice(index,1);
+      })
+      return {
+          ...state,
+      }
     default:
         return state;
     }

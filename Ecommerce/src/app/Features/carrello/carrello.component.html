@@ -3,28 +3,37 @@
         <ul class="list-group list-group-flush" *ngFor="let n of items | async">
           <li class="list-group-item">
             <div class="list-grid">
-              <div class="imgblend left" [style.background-color]="n.itemColor"
+              <div class="imgblend div-left" [style.background-color]="n.itemColor"
                [style.background-image]="'url(../../assets/'+n.itemType+'.png'">
               </div>
-              <div class="right">
+              <div class="div-center">
                 <p>Articolo: {{ n.itemType }}</p>
                 <p>Colore: <span class="colors"  [style.background-color]="n.itemColor">{{ n.itemColor }}</span></p>
                 <p>Testo personalizzato: {{ n.itemText }}</p>
                 <p>Colore testo: <span class="colors" [style.background-color]="n.textColor">{{ n.textColor }}</span></p>
                 <p>Prezzo: {{ n.itemPrice }}</p>
               </div>
+              <div class="div-right">
+                <button (click)="deleteItem(n.id)">ELIMINA</button>
+              </div>
             </div>
           <hr>
           </li>
         </ul>
       </div>
+
       <div class="top2" *ngIf="pageNum==2">
         <ul class="list-group list-group-flush">
           <li class="list-group-item">
             <h1>PAGINA N 2</h1>
+            <div *ngFor="let u of userData">
+              <p>{{ u.nome }}</p>
+            </div>
+
           </li>
         </ul>
       </div>
+
       <div class="top3" *ngIf="pageNum==3">
         <ul class="list-group list-group-flush">
           <li class="list-group-item">

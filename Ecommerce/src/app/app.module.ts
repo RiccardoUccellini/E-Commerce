@@ -11,6 +11,9 @@ import { StoreModule } from '@ngrx/store';
 import { addItemReducer } from './Store/reducers/item.reducer';
 import { HttpClientModule } from '@angular/common/http';
 
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
+
 
 @NgModule({
   declarations: [
@@ -24,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     NgbModule,
     FormsModule,
     StoreModule.forRoot({item: addItemReducer}),
-    HttpClientModule
+    HttpClientModule,
+    StoreDevtoolsModule
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [],

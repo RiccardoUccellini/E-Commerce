@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RegistrazioneService } from '../../services/registrazione/registrazione.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registrati',
@@ -8,7 +9,7 @@ import { RegistrazioneService } from '../../services/registrazione/registrazione
 })
 export class RegistratiComponent implements OnInit {
 
-  constructor(private RegistrazioneService: RegistrazioneService) { }
+  constructor(private RegistrazioneService: RegistrazioneService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -17,6 +18,7 @@ export class RegistratiComponent implements OnInit {
 
     this.RegistrazioneService.sendPostRequest(username, password, nome, cognome, telefono, citta, cap, indirizzo).subscribe((data: any[])=>{
       alert("Registrazione avvenuta con successo!")
+      this.router.navigateByUrl("/login");
     });
   }
 }

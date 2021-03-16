@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Item } from 'src/app/Store/models/item.model';
 import { ItemsService } from '../../services/items/items.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -13,10 +13,9 @@ export class HomeComponent implements OnInit {
   private itemType: any;
 
 
-  constructor(private ItemsService: ItemsService) {
+  constructor(private ItemsService: ItemsService, private router: Router) {
 
     this.ItemsService.sendGetRequest().subscribe((data: any[])=>{
-      console.log(data);
       this.list = data;
     })
 
@@ -25,6 +24,9 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  redirect(type, price) {
+    this.router.navigateByUrl("/personalizza/"+type+"/"+price);
+  }
 
 }
 
