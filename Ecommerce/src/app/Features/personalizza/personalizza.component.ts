@@ -30,7 +30,8 @@ export class PersonalizzaComponent implements OnInit {
       alert('Articolo aggiunto al carrello!');
       this.id += 1;
 
-      this.store.dispatch(new CarrelloActions.AddToCart({id: this.id,
+      this.store.dispatch(new CarrelloActions.AddToCart({
+        id: this.id,
         itemType: itemType,
         itemColor: itemColor,
         itemText: itemText,

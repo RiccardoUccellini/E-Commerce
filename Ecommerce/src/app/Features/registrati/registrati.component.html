@@ -2,7 +2,7 @@
     <div class=" row justify-content-md-center">
     <!-- Form login -->
 
-    <form class="text-center p-5 col-6 justify-content-center" #registrazioneForm="ngForm" (ngSubmit)="createUser(registrazioneForm.value.username, registrazioneForm.value.password, registrazioneForm.value.nome, registrazioneForm.value.cognome, registrazioneForm.value.telefono, registrazioneForm.value.citta, registrazioneForm.value.cap, registrazioneForm.value.indirizzo)">
+    <form class="text-center p-5 col-6 justify-content-center" #registrazioneForm="ngForm" (ngSubmit)="createUser(registrazioneForm.value.username, registrazioneForm.value.password, registrazioneForm.value.nome, registrazioneForm.value.cognome, registrazioneForm.value.cellulare, registrazioneForm.value.citta, registrazioneForm.value.cap, registrazioneForm.value.indirizzo)">
 
       <p class="h4 mb-4">Registrati</p>
 
@@ -16,7 +16,7 @@
 
       <input type="text" name="cognome" class="form-control mb-4" placeholder="Cognome" ngModel>
 
-      <input type="text" name="telefono" class="form-control mb-4" placeholder="Telefono" ngModel>
+      <input type="text" name="cellulare" class="form-control mb-4" placeholder="Cellulare" ngModel>
 
       <input type="text" name="citta" class="form-control mb-4" placeholder="Cittá" ngModel>
 

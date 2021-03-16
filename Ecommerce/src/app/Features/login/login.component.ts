@@ -4,6 +4,9 @@ import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../app.state';
 import { currentUser } from '../../Store/models/user.model';
+import * as usersActions from '../../Store/actions/users.actions';
+import { Observable } from 'rxjs';
+
 
 
 @Component({
@@ -13,12 +16,11 @@ import { currentUser } from '../../Store/models/user.model';
 })
 export class LoginComponent implements OnInit {
 
-  user: any;
+  user: Observable<currentUser[]>;
   userData: any;
-  newData: any;
 
   constructor(private LoginService: LoginService, private router: Router, private store: Store<AppState>) {
-    this.user = this.store.select(state => state.currentUser);
+    this.user = this.store.select(state => state.users);
   }
 
   getAuth(username: any, password: any) {
@@ -33,11 +35,8 @@ export class LoginComponent implements OnInit {
         return;
       }
       else if ( password == this.userData[0].password) {
-
-        this.user = this.store.select(state => state.currentUser);
-        this.store.dispatch({
-          type: 'ADD_USER',
-          payload: <currentUser> {
+        alert("Loggato");
+        this.store.dispatch(new usersActions.AddUser({
             id: this.userData[0].id,
             username: this.userData[0].username,
             nome: this.userData[0].nome,
@@ -46,8 +45,7 @@ export class LoginComponent implements OnInit {
             citta: this.userData[0].citta,
             cap: this.userData[0].cap,
             indirizzo: this.userData[0].indirizzo
-          }
-        });
+        }));
 
         this.router.navigateByUrl("/home");
       }

@@ -14,9 +14,9 @@ export class RegistratiComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  createUser(username, password, nome, cognome, telefono, citta, cap, indirizzo) {
+  createUser(username, password, nome, cognome, cellulare, citta, cap, indirizzo) {
 
-    this.RegistrazioneService.sendPostRequest(username, password, nome, cognome, telefono, citta, cap, indirizzo).subscribe((data: any[])=>{
+    this.RegistrazioneService.sendPostRequest(username, password, nome, cognome, cellulare, citta, cap, indirizzo).subscribe((data: any[])=>{
       alert("Registrazione avvenuta con successo!")
       this.router.navigateByUrl("/login");
     });

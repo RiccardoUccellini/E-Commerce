@@ -3,6 +3,6 @@ import { Carrello } from './Store/models/carrello.model';
 
 
 export interface AppState {
-  readonly currentUser: currentUser[];
+  readonly users: currentUser[];
   readonly carrello: Carrello[];
 }

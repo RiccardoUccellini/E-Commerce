@@ -32,6 +32,17 @@
       "cap": "24060",
       "indirizzo": "Via s stefano 65",
       "id": 3
+    },
+    {
+      "username": "nuovo",
+      "password": "password",
+      "nome": "Lorenzo",
+      "cognome": "Conti",
+      "telefono": "3293346557",
+      "citta": "Milano",
+      "cap": "24567",
+      "indirizzo": "Via europa 754",
+      "id": 4
     }
   ],
   "items": [

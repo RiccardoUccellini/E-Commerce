@@ -12,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { carrelloReducer } from './Store/reducers/carrello.reducer';
+import { usersReducer } from './Store/reducers/users.reducer';
+
 
 
 
@@ -26,12 +28,14 @@ import { carrelloReducer } from './Store/reducers/carrello.reducer';
     MenuModule,
     NgbModule,
     FormsModule,
-    StoreModule.forRoot({carrello: carrelloReducer}),
+    StoreModule.forRoot({carrello: carrelloReducer, users: usersReducer}),
     HttpClientModule,
-    StoreDevtoolsModule
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, // Retains last 25 states
+      }),
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

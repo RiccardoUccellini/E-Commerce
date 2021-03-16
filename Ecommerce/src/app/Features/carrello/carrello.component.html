@@ -12,9 +12,7 @@
                 <p>Testo personalizzato: {{ item.itemText }}</p>
                 <p>Colore testo: <span class="colors" [style.background-color]="item.textColor">{{ item.textColor }}</span></p>
                 <p>Prezzo: {{ item.itemPrice }}</p>
-              </div>
-              <div class="div-right">
-                <button (click)="deleteItem(i)">ELIMINA</button>
+                <button class="btn-elimina" (click)="deleteItem(i)">RIMUOVI</button>
               </div>
             </div>
           <hr>
@@ -23,15 +21,32 @@
       </div>
 
       <div class="top2" *ngIf="pageNum==2">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            <h1>PAGINA N 2</h1>
-            <div *ngFor="let u of userData">
-              <p>{{ u.nome }}</p>
-            </div>
-
-          </li>
-        </ul>
+        <div class="input-container" *ngFor="let user of userData | async">
+          <div>
+            <label for="">Nome</label><br>
+            <input type="text" [value]="user.nome" class="input-utente"><br>
+          </div>
+          <div>
+            <label for="">Cognome</label><br>
+            <input type="text" [value]="user.cognome" class="input-utente"><br>
+          </div>
+          <div>
+            <label for="">Cellulare</label><br>
+            <input type="text" [value]="user.cellulare" class="input-utente"><br>
+          </div>
+          <div>
+            <label for="">Citta'</label><br>
+            <input type="text" [value]="user.citta" class="input-utente"><br>
+          </div>
+          <div>
+            <label for="">CAP</label><br>
+            <input type="text" [value]="user.cap" class="input-utente"><br>
+          </div>
+          <div>
+            <label for="">Indirizzo</label><br>
+            <input type="text" [value]="user.indirizzo" class="input-utente"><br>
+          </div>
+        </div>
       </div>
 
       <div class="top3" *ngIf="pageNum==3">

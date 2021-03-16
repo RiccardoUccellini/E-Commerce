@@ -1,11 +1,14 @@
-// product.reducer.ts
-import { currentUser } from '../models/user.model';
-export const ADD_USER = 'ADD_USER';
-export function addUserReducer(state: currentUser[] = [], action: any) {
-  switch (action.type) {
-    case ADD_USER:
-        return [...state, action.payload];
-    default:
-        return state;
+import { Action } from '@ngrx/store'
+import { currentUser } from './../models/user.model'
+import * as usersActions from './../actions/users.actions'
+
+export function usersReducer(state: currentUser[] = [], action: usersActions.Actions) {
+
+    switch(action.type) {
+        case usersActions.ADD_USER:
+            return [...state, action.payload];
+
+        default:
+            return state;
     }
 }
