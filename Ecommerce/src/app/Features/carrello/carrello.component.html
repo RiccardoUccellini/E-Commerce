@@ -1,20 +1,20 @@
 <div class="wrapper">
       <div class="top1" *ngIf="pageNum==1">
-        <ul class="list-group list-group-flush" *ngFor="let n of items | async">
+        <ul class="list-group list-group-flush" *ngFor="let item of carrello | async; let i = index">
           <li class="list-group-item">
             <div class="list-grid">
-              <div class="imgblend div-left" [style.background-color]="n.itemColor"
-               [style.background-image]="'url(../../assets/'+n.itemType+'.png'">
+              <div class="imgblend div-left" [style.background-color]="item.itemColor"
+               [style.background-image]="'url(../../assets/'+item.itemType+'.png'">
               </div>
               <div class="div-center">
-                <p>Articolo: {{ n.itemType }}</p>
-                <p>Colore: <span class="colors"  [style.background-color]="n.itemColor">{{ n.itemColor }}</span></p>
-                <p>Testo personalizzato: {{ n.itemText }}</p>
-                <p>Colore testo: <span class="colors" [style.background-color]="n.textColor">{{ n.textColor }}</span></p>
-                <p>Prezzo: {{ n.itemPrice }}</p>
+                <p>Articolo: {{ item.itemType }}</p>
+                <p>Colore: <span class="colors"  [style.background-color]="item.itemColor">{{ item.itemColor }}</span></p>
+                <p>Testo personalizzato: {{ item.itemText }}</p>
+                <p>Colore testo: <span class="colors" [style.background-color]="item.textColor">{{ item.textColor }}</span></p>
+                <p>Prezzo: {{ item.itemPrice }}</p>
               </div>
               <div class="div-right">
-                <button (click)="deleteItem(n.id)">ELIMINA</button>
+                <button (click)="deleteItem(i)">ELIMINA</button>
               </div>
             </div>
           <hr>

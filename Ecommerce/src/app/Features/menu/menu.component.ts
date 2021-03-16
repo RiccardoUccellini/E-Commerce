@@ -1,4 +1,4 @@
-import { Item } from '../../Store/models/item.model';
+import { Carrello } from '../../Store/models/carrello.model';
 import { AppState } from '../../app.state';
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
@@ -12,11 +12,11 @@ import { Router } from '@angular/router';
 })
 export class MenuComponent implements OnInit {
 
-  cartItems: Observable<Item[]>;
+  carrello: Observable<Carrello[]>;
 
   constructor(private router: Router, private store: Store<AppState>) {
 
-    this.cartItems = this.store.select(state => state.item);
+    this.carrello = this.store.select(state => state.carrello);
 
   }
 

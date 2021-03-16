@@ -1,4 +1,4 @@
-export interface Item {
+export interface Carrello {
   id: number;
   itemType: string;
   itemColor: string;

@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   newData: any;
 
   constructor(private LoginService: LoginService, private router: Router, private store: Store<AppState>) {
-    this.user = this.store.select(state => state.item);
+    this.user = this.store.select(state => state.currentUser);
   }
 
   getAuth(username: any, password: any) {
