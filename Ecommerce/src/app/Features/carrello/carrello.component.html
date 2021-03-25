@@ -50,9 +50,47 @@
       </div>
 
       <div class="top3" *ngIf="pageNum==3">
-        <ul class="list-group list-group-flush">
+        <ul class="list-group list-group-flush" *ngFor="let item of carrello | async; let i = index, let user of userData | async ">
           <li class="list-group-item">
-            <h1>PAGINA N 3</h1>
+            
+              <div class="div-center">
+                <div>
+                <p>Prodotti acquistati: <span class="counter" *ngIf="(carrello | async) as items">{{ items.length }}</span></p>
+                <p>Prezzo: </p>
+                <p>Spedizione: {{ item.itemText }}</p>
+                <p>Indirizzo: {{ user.indirizzo }}</p>
+                <p>Spedito al sig.: {{ user.nome }} {{ user.cognome }}</p>
+              </div>
+                <hr><br>
+                <div>
+                <label for="paymentType">Scegli metodo di pagamento:</label>
+
+                <select name="paymentType" id="paymentType">
+                  <option value="CreditCard">Carta di credito</option>
+                  <option value="PrepaidCard">Carta prepagata</option>
+              
+                </select><br>
+                <label for="cards">Tipo carta:</label>
+
+                <select name="cards" id="cards">
+                  <option value="visa">Visa</option>
+                  <option value="mastercard">Mastercard</option>
+              
+                </select>
+          
+              </div>
+              <div>
+                <div>
+                  <label for="">Numero carta</label>
+                  <input type="text" [value]="" class="input-utente">
+                  <label for="">CVV/CCv</label>
+                  <input type="text" [value]="" class="input-utente">
+                </div>
+              </div>
+                
+              
+            </div>
+          <hr>
           </li>
         </ul>
       </div>
