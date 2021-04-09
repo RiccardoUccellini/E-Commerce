@@ -1,5 +1,6 @@
+import { Carrello } from './../../Store/models/carrello.model';
 
-import { Carrello } from '../../Store/models/carrello.model';
+
 import { AppState } from '../../app.state';
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
@@ -17,6 +18,8 @@ export class CarrelloComponent implements OnInit {
   pageNum:number;
   carrello: Observable<Carrello[]>;
   userData: Observable<currentUser[]>;
+  
+  
 
   constructor(private store: Store<AppState>) {
 
@@ -25,6 +28,7 @@ export class CarrelloComponent implements OnInit {
     console.log(this.userData);
 
     this.pageNum = 1;
+  
   }
 
   ngOnInit(): void {
@@ -38,5 +42,7 @@ export class CarrelloComponent implements OnInit {
   choosePage(num: number) {
     this.pageNum = num;
   }
+
+
 
 }

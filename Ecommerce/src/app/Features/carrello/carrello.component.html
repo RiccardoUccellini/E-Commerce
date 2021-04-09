@@ -53,44 +53,45 @@
         <ul class="list-group list-group-flush" *ngFor="let item of carrello | async; let i = index, let user of userData | async ">
           <li class="list-group-item">
             
-              <div class="div-center">
+              <div class="div-center" >
                 <div>
                 <p>Prodotti acquistati: <span class="counter" *ngIf="(carrello | async) as items">{{ items.length }}</span></p>
                 <p>Prezzo: </p>
-                <p>Spedizione: {{ item.itemText }}</p>
-                <p>Indirizzo: {{ user.indirizzo }}</p>
-                <p>Spedito al sig.: {{ user.nome }} {{ user.cognome }}</p>
+                <p>Spedizione:<b> 3€</b></p>
+                <p>Indirizzo:<b> {{ user.indirizzo }}</b></p>
+                <p>Spedito al sig.: <b>{{ user.nome }} {{ user.cognome }}</b></p>
               </div>
                 <hr><br>
                 <div>
                 <label for="paymentType">Scegli metodo di pagamento:</label>
 
-                <select name="paymentType" id="paymentType">
+                <select name="paymentType" id="paymentType" class="input-select">
                   <option value="CreditCard">Carta di credito</option>
                   <option value="PrepaidCard">Carta prepagata</option>
               
                 </select><br>
                 <label for="cards">Tipo carta:</label>
 
-                <select name="cards" id="cards">
+                <select name="cards" id="cards" class="input-select">
                   <option value="visa">Visa</option>
                   <option value="mastercard">Mastercard</option>
               
                 </select>
           
               </div>
+              <br>
               <div>
                 <div>
-                  <label for="">Numero carta</label>
-                  <input type="text" [value]="" class="input-utente">
-                  <label for="">CVV/CCv</label>
-                  <input type="text" [value]="" class="input-utente">
+                  <label for="ncarta">Numero carta</label>
+                  <input type="text" [value]="" class="input-select" style="width: 60%;" >
+                  <label for="cvv">CVV/CCv</label>
+                  <input type="text" [value]="" class="input-select" style="width: 10%;" >
                 </div>
               </div>
                 
               
             </div>
-          <hr>
+        
           </li>
         </ul>
       </div>
