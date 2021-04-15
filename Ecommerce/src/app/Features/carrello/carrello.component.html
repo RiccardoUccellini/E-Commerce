@@ -56,10 +56,11 @@
               <div class="div-center" >
                 <div>
                 <p>Prodotti acquistati: <span class="counter" *ngIf="(carrello | async) as items">{{ items.length }}</span></p>
-                <p>Prezzo: </p>
+                <p>Prezzo: {{item.itemPrice}} </p>
                 <p>Spedizione:<b> 3€</b></p>
                 <p>Indirizzo:<b> {{ user.indirizzo }}</b></p>
                 <p>Spedito al sig.: <b>{{ user.nome }} {{ user.cognome }}</b></p>
+            
               </div>
                 <hr><br>
                 <div>

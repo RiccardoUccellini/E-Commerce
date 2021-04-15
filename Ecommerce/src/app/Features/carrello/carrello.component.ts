@@ -1,9 +1,9 @@
 import { Carrello } from './../../Store/models/carrello.model';
 
-
+import { Subscription } from 'rxjs';
 import { AppState } from '../../app.state';
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import * as CarrelloActions from '../../Store/actions/carrello.actions';
 import { currentUser } from 'src/app/Store/models/user.model';
@@ -18,6 +18,9 @@ export class CarrelloComponent implements OnInit {
   pageNum:number;
   carrello: Observable<Carrello[]>;
   userData: Observable<currentUser[]>;
+  subscription=new Subscription();
+  prodotti:Carrello[]=[];
+  totale: number;
   
   
 
@@ -31,8 +34,33 @@ export class CarrelloComponent implements OnInit {
   
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
+    this.subscription.add(this.store.pipe(select(this.carrello)
 
+    ).subscribe(prodotti => {
+
+      this.prodotti=prodotti;
+
+    }));
+
+    //prezzo
+
+    this.calcolaPrezzo();
+
+  }
+
+
+
+  calcolaPrezzo(){
+
+    this.prodotti.forEach(prodotto => {
+
+      console.log(prodotto.itemPrice)
+
+      this.totale+=prodotto.itemPrice;
+
+    });
+   
   }
 
   deleteItem(index) {
@@ -43,6 +71,9 @@ export class CarrelloComponent implements OnInit {
     this.pageNum = num;
   }
 
+  
 
 
+
+  
 }

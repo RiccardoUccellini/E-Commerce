@@ -4,5 +4,5 @@ export interface Carrello {
   itemColor: string;
   itemText: string;
   textColor: string;
-  itemPrice: string;
+  itemPrice: number;
 }
