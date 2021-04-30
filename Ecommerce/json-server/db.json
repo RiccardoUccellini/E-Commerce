@@ -43,6 +43,17 @@
       "cap": "24567",
       "indirizzo": "Via europa 754",
       "id": 4
+    },
+    {
+      "username": "ucce",
+      "password": "ucce123",
+      "nome": "riccardo",
+      "cognome": "uccellini",
+      "telefono": "3451669032",
+      "citta": "lodi",
+      "cap": "26900",
+      "indirizzo": "via lunigiana 4",
+      "id": 5
     }
   ],
   "items": [
